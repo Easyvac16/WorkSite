@@ -8,7 +8,7 @@ var options = ["1", "2", "3", "4"];
 var nameArray = ["Онуфрійчук", "Григорьєв", "Ящук", "Дудник"];
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Додаємо опції у select "colect"
+
     options.forEach(optionValue => {
         let option = document.createElement("option");
         option.value = optionValue;
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         colect.appendChild(option);
     });
 
-    // Додаємо опції у select "names"
+
     nameArray.forEach(optionValue => {
         let option = document.createElement("option");
         option.value = optionValue;
@@ -31,7 +31,7 @@ fetch("Salary.json")
     .then(response => response.json())
     .then(data => {
         mydata = data;
-        // Викликаємо функцію для обробки всіх об'єктів
+
     })
     .catch(error => console.error("Error loading JSON:", error));
 
@@ -67,7 +67,7 @@ function JsonParse(data) {
 
 
 function sendRequest(data) {
-    let container = document.getElementById("dataContainer"); // Контейнер для даних
+    let container = document.getElementById("dataContainer");
     if (!container) {
         container = document.createElement("div");
         container.id = "dataContainer";
@@ -75,7 +75,7 @@ function sendRequest(data) {
     }
 
     let card = document.createElement("div");
-    card.classList.add("data-card"); // Додаємо клас для стилізації
+    card.classList.add("data-card");
     card.innerHTML = `
         <p><strong>Task:</strong> ${data.task}</p>
         <p><strong>Hours:</strong> ${data.hours}</p>
@@ -88,5 +88,5 @@ function sendRequest(data) {
 }
 
 function sendZP() {
-    sendAllData();
+    //sendAllData();
 }
